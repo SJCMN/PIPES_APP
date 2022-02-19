@@ -7,13 +7,23 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
  name: string = '';
- date: string = '';
+ paymentDate: string = '';
+ amount: number = 0 ;
+ height: number = 0;
 
  onNameChange(value: string){
    this.name = value;
  }
 
  onDateChange(value: string){
-  this.date = value;
+  this.paymentDate = value;
+ }
+
+ onAmountChange(value: string){
+  this.amount = parseFloat(value);
+ }
+
+ onHeightChange(value: string){
+   this.height = parseFloat(value)
  }
 }

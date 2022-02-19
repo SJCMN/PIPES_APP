@@ -44,7 +44,43 @@
       <div class="col">
         <label><b>Payment Date</b></label>
         <div>
-          {{ date  }}
+          {{ paymentDate | date : "MMMM d, y" }}
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col">
+        <label>Payment Amount</label>
+        <input
+          class="form-control"
+          #amountInput
+          (input)="onAmountChange(amountInput.value)"
+        />
+      </div>
+
+      <div class="col">
+        <label><b>Payment Amount</b></label>
+        <div>
+          {{ amount | currency : "JPY" }}
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col">
+        <label>User Height</label>
+        <input
+          class="form-control"
+          #heightInput
+          (input)="onHeightChange(heightInput.value)"
+        />
+      </div>
+
+      <div class="col">
+        <label><b>User Height</b></label>
+        <div>
+          {{ height | number: '1.2-2' }}
         </div>
       </div>
     </div>
